@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="6dp"
+        android:background="@color/colorAccent"
+        android:id="@+id/list_item_black_list_image"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/black_list_image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="Roque Rueda"
+        android:id="@+id/list_item_black_list_name"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/list_item_black_list_image"
+        android:layout_toEndOf="@+id/list_item_black_list_image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:text="3 min ago"
+        android:id="@+id/list_item_black_list_date"
+        android:layout_alignBottom="@+id/list_item_black_list_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="6dp"
+        android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>

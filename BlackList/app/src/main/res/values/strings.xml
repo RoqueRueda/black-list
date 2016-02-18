@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BlackList</string>
+    <string name="black_list_image">Image</string>
 </resources>
