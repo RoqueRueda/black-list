@@ -10,7 +10,7 @@ import java.util.UUID;
  * @version 1.0
  * @since 2/17/16
  */
-public class BlackListItem {
+public class BlackListContact {
 
     private UUID mId;
     private String mName;
@@ -19,7 +19,7 @@ public class BlackListItem {
     /**
      * Creates an instance with the default values.
      */
-    public BlackListItem() {
+    public BlackListContact() {
         mId = UUID.randomUUID();
         mCreationDate = new Date();
     }

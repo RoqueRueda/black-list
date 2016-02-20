@@ -4,9 +4,8 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.BackingStoreException;
 
-import rueda.roque.android.com.blacklist.entities.BlackListItem;
+import rueda.roque.android.com.blacklist.entities.BlackListContact;
 
 /**
  * Class used to get the items of the black list, is in charge of the operations
@@ -26,7 +25,7 @@ public class BlackListRepo {
     /**
      * List that contains the black list items.
      */
-    private List<BlackListItem> mBlackListItems;
+    private List<BlackListContact> mBlackListContacts;
 
     /**
      * Method used to get access to the instance of this class.
@@ -52,20 +51,20 @@ public class BlackListRepo {
     private BlackListRepo(Context context) {
 
         // Create the list.
-        mBlackListItems = new ArrayList<>(20);
+        mBlackListContacts = new ArrayList<>(20);
 
         // Fill the list with some static information.
         for (int i=0; i<20; i++) {
-            BlackListItem item = new BlackListItem();
+            BlackListContact item = new BlackListContact();
             item.setName("Black list item #" + i);
 
-            mBlackListItems.add(item);
+            mBlackListContacts.add(item);
         }
     }
 
     /**
      * Gets the list of items that exist on the current repository.
      */
-    public List<BlackListItem> getBlackListItems() { return mBlackListItems; }
+    public List<BlackListContact> getBlackListContacts() { return mBlackListContacts; }
 
 }

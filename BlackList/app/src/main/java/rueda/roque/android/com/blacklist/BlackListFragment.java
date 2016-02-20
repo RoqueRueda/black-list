@@ -14,10 +14,9 @@ import android.widget.Toast;
 
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 import rueda.roque.android.com.blacklist.data.BlackListRepo;
-import rueda.roque.android.com.blacklist.entities.BlackListItem;
+import rueda.roque.android.com.blacklist.entities.BlackListContact;
 
 /**
  * Fragment that will be used to display the black list items to the user.
@@ -82,7 +81,7 @@ public class BlackListFragment extends Fragment {
      */
     private void updateRecyclerView() {
         BlackListRepo repo = BlackListRepo.get(getActivity());
-        List<BlackListItem> items = repo.getBlackListItems();
+        List<BlackListContact> items = repo.getBlackListContacts();
 
         if (mAdapter == null) {
             mAdapter = new BlackListAdapter(items);
@@ -104,7 +103,7 @@ public class BlackListFragment extends Fragment {
     private class BlackListHolder extends RecyclerView.ViewHolder
         implements View.OnClickListener {
 
-        private BlackListItem mCurrentItem;
+        private BlackListContact mCurrentItem;
 
         /**
          * Reference to the widget that will display the name.
@@ -134,7 +133,7 @@ public class BlackListFragment extends Fragment {
          * Set the values of the widgets based on the given item.
          * @param item Item that contains the data to be display to the user.
          */
-        public void bindItem(BlackListItem item) {
+        public void bindItem(BlackListContact item) {
             mCurrentItem = item;
             mName.setText(mCurrentItem.getName());
             mDate.setText(DateUtils.getRelativeTimeSpanString(item.getCreationDate().getTime(),
@@ -163,13 +162,13 @@ public class BlackListFragment extends Fragment {
         /**
          * List of items.
          */
-        private List<BlackListItem> mItems;
+        private List<BlackListContact> mItems;
 
         /**
          * Creates an instance of this adapter using the given list as parameter.
          * @param items
          */
-        public BlackListAdapter(List<BlackListItem> items) {
+        public BlackListAdapter(List<BlackListContact> items) {
             mItems = items;
         }
 
@@ -194,7 +193,7 @@ public class BlackListFragment extends Fragment {
          */
         @Override
         public void onBindViewHolder(BlackListHolder holder, int position) {
-            BlackListItem item = mItems.get(position);
+            BlackListContact item = mItems.get(position);
             holder.bindItem(item);
         }
 
